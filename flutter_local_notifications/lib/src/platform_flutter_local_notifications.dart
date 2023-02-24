@@ -100,7 +100,7 @@ class MethodChannelFlutterLocalNotificationsPlugin
     return activeNotifications
             // ignore: always_specify_types
             ?.map((p) => ActiveNotification(
-                  id: p['id'],
+                  id: p['id'] ?? -22,
                   channelId: p['channelId'],
                   groupKey: p['groupKey'],
                   tag: p['tag'],
