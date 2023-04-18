@@ -1,3 +1,23 @@
+## [4.0.0-dev.2]
+
+* **Breaking change** the following classes are now enums
+    * `LinuxNotificationCategory`
+    * `LinuxNotificationUrgency`
+* Switched from using `mocktail` to `mockito` for consistency and with it getting more updates as a first-party package
+
+## [4.0.0-dev.1]
+
+* **Breaking change** the `id` property of the `ActiveNotification` class is now nullable to help indicate that the notification may not have been created by the plugin e.g. it was from Firebase Cloud Messaging. Thanks to the PR from [frankvollebregt](https://github.com/frankvollebregt)
+
+## [3.0.0+1]
+
+* Bumped `xdg_directories` dependency constraints
+
+## [3.0.0]
+
+* Updated minimum Flutter version to 3.0.0. Note that technically this was already a requirement by `flutter_local_notifications_linux` 2.0.0 as `ffi` 2.0.0 requires Dart 2.17 at a minimum and that shipped with Flutter 3.0.0
+* Added explicit `ffi` dependency that plugin was already using
+
 ## [2.0.0]
 
 * Bumped `dbus` dependency

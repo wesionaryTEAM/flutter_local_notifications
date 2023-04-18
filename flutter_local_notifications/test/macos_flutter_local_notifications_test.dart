@@ -62,7 +62,6 @@ void main() {
         requestAlertPermission: false,
         requestBadgePermission: false,
         requestSoundPermission: false,
-        requestCriticalPermission: false,
         defaultPresentAlert: false,
         defaultPresentBadge: false,
         defaultPresentSound: false,
@@ -153,10 +152,12 @@ void main() {
               'sound': 'sound.mp3',
               'badgeNumber': 1,
               'threadIdentifier': 'thread',
-              'attachments': <Map<String, Object>>[
-                <String, Object>{
+              'attachments': <Map<String, Object?>>[
+                <String, Object?>{
                   'filePath': 'video.mp4',
                   'identifier': '2b3f705f-a680-4c9f-8075-a46a70e28373',
+                  'hideThumbnail': null,
+                  'thumbnailClippingRect': null,
                 }
               ],
               'categoryIdentifier': 'category1',
@@ -220,10 +221,12 @@ void main() {
                     'sound': 'sound.mp3',
                     'badgeNumber': 1,
                     'threadIdentifier': null,
-                    'attachments': <Map<String, Object>>[
-                      <String, Object>{
+                    'attachments': <Map<String, Object?>>[
+                      <String, Object?>{
                         'filePath': 'video.mp4',
                         'identifier': '2b3f705f-a680-4c9f-8075-a46a70e28373',
+                        'hideThumbnail': null,
+                        'thumbnailClippingRect': null,
                       }
                     ],
                     'categoryIdentifier': null,
@@ -267,7 +270,7 @@ void main() {
           'notification body',
           scheduledDate,
           notificationDetails,
-          androidAllowWhileIdle: true,
+          androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
           uiLocalNotificationDateInterpretation:
               UILocalNotificationDateInterpretation.absoluteTime,
         );
@@ -280,6 +283,7 @@ void main() {
               'body': 'notification body',
               'payload': '',
               'scheduledDateTime': convertDateToISO8601String(scheduledDate),
+              'scheduledDateTimeISO8601': scheduledDate.toIso8601String(),
               'timeZoneName': 'Australia/Sydney',
               'platformSpecifics': <String, Object?>{
                 'subtitle': null,
@@ -289,10 +293,12 @@ void main() {
                 'sound': 'sound.mp3',
                 'badgeNumber': 1,
                 'threadIdentifier': null,
-                'attachments': <Map<String, Object>>[
-                  <String, Object>{
+                'attachments': <Map<String, Object?>>[
+                  <String, Object?>{
                     'filePath': 'video.mp4',
                     'identifier': '2b3f705f-a680-4c9f-8075-a46a70e28373',
+                    'hideThumbnail': null,
+                    'thumbnailClippingRect': null,
                   }
                 ],
                 'categoryIdentifier': null,
@@ -332,7 +338,7 @@ void main() {
           'notification body',
           scheduledDate,
           notificationDetails,
-          androidAllowWhileIdle: true,
+          androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
           uiLocalNotificationDateInterpretation:
               UILocalNotificationDateInterpretation.absoluteTime,
           matchDateTimeComponents: DateTimeComponents.time,
@@ -348,6 +354,7 @@ void main() {
               'body': 'notification body',
               'payload': '',
               'scheduledDateTime': convertDateToISO8601String(scheduledDate),
+              'scheduledDateTimeISO8601': scheduledDate.toIso8601String(),
               'timeZoneName': 'Australia/Sydney',
               'matchDateTimeComponents': DateTimeComponents.time.index,
               'platformSpecifics': <String, Object?>{
@@ -358,10 +365,12 @@ void main() {
                 'sound': 'sound.mp3',
                 'badgeNumber': 1,
                 'threadIdentifier': null,
-                'attachments': <Map<String, Object>>[
-                  <String, Object>{
+                'attachments': <Map<String, Object?>>[
+                  <String, Object?>{
                     'filePath': 'video.mp4',
                     'identifier': '2b3f705f-a680-4c9f-8075-a46a70e28373',
+                    'hideThumbnail': null,
+                    'thumbnailClippingRect': null,
                   }
                 ],
                 'categoryIdentifier': null,
@@ -403,7 +412,7 @@ void main() {
           'notification body',
           scheduledDate,
           notificationDetails,
-          androidAllowWhileIdle: true,
+          androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
           uiLocalNotificationDateInterpretation:
               UILocalNotificationDateInterpretation.absoluteTime,
           matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime,
@@ -419,6 +428,7 @@ void main() {
               'body': 'notification body',
               'payload': '',
               'scheduledDateTime': convertDateToISO8601String(scheduledDate),
+              'scheduledDateTimeISO8601': scheduledDate.toIso8601String(),
               'timeZoneName': 'Australia/Sydney',
               'matchDateTimeComponents':
                   DateTimeComponents.dayOfWeekAndTime.index,
@@ -430,10 +440,12 @@ void main() {
                 'sound': 'sound.mp3',
                 'badgeNumber': 1,
                 'threadIdentifier': null,
-                'attachments': <Map<String, Object>>[
-                  <String, Object>{
+                'attachments': <Map<String, Object?>>[
+                  <String, Object?>{
                     'filePath': 'video.mp4',
                     'identifier': '2b3f705f-a680-4c9f-8075-a46a70e28373',
+                    'hideThumbnail': null,
+                    'thumbnailClippingRect': null,
                   }
                 ],
                 'categoryIdentifier': null,

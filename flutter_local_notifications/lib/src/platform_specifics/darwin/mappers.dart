@@ -48,10 +48,21 @@ extension DarwinInitializationSettingsMapper on DarwinInitializationSettings {
       };
 }
 
-extension DarwinNotificationAttachmentMapper on DarwinNotificationAttachment {
+extension on DarwinNotificationAttachmentThumbnailClippingRect {
   Map<String, Object> toMap() => <String, Object>{
+        'x': x,
+        'y': y,
+        'width': width,
+        'height': height,
+      };
+}
+
+extension DarwinNotificationAttachmentMapper on DarwinNotificationAttachment {
+  Map<String, Object?> toMap() => <String, Object?>{
         'identifier': identifier ?? '',
         'filePath': filePath,
+        'hideThumbnail': hideThumbnail,
+        'thumbnailClippingRect': thumbnailClippingRect?.toMap(),
       };
 }
 
@@ -64,7 +75,7 @@ extension DarwinNotificationDetailsMapper on DarwinNotificationDetails {
         'sound': sound,
         'badgeNumber': badgeNumber,
         'threadIdentifier': threadIdentifier,
-        'interruptionLevel': interruptionLevel?.value,
+        'interruptionLevel': interruptionLevel?.index,
         'attachments': attachments
             ?.map((a) => a.toMap()) // ignore: always_specify_types
             .toList(),
