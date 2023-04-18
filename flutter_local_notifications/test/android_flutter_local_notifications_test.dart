@@ -1,3 +1,4 @@
+// ignore: unnecessary_import
 import 'dart:typed_data';
 
 import 'package:clock/clock.dart';
@@ -1942,7 +1943,7 @@ void main() {
             'notification body',
             scheduledDate,
             const NotificationDetails(android: androidNotificationDetails),
-            androidAllowWhileIdle: true,
+            androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
             uiLocalNotificationDateInterpretation:
                 UILocalNotificationDateInterpretation.absoluteTime);
         expect(
@@ -1954,6 +1955,7 @@ void main() {
               'payload': '',
               'timeZoneName': 'Australia/Sydney',
               'scheduledDateTime': convertDateToISO8601String(scheduledDate),
+              'scheduledDateTimeISO8601': scheduledDate.toIso8601String(),
               'platformSpecifics': <String, Object?>{
                 'scheduleMode': 'exactAllowWhileIdle',
                 'icon': null,
@@ -2035,7 +2037,7 @@ void main() {
             'notification body',
             scheduledDate,
             const NotificationDetails(android: androidNotificationDetails),
-            androidAllowWhileIdle: true,
+            androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
             uiLocalNotificationDateInterpretation:
                 UILocalNotificationDateInterpretation.absoluteTime,
             matchDateTimeComponents: DateTimeComponents.time);
@@ -2048,6 +2050,7 @@ void main() {
               'payload': '',
               'timeZoneName': 'Australia/Sydney',
               'scheduledDateTime': convertDateToISO8601String(scheduledDate),
+              'scheduledDateTimeISO8601': scheduledDate.toIso8601String(),
               'matchDateTimeComponents': DateTimeComponents.time.index,
               'platformSpecifics': <String, Object?>{
                 'scheduleMode': 'exactAllowWhileIdle',
@@ -2130,7 +2133,7 @@ void main() {
             'notification body',
             scheduledDate,
             const NotificationDetails(android: androidNotificationDetails),
-            androidAllowWhileIdle: true,
+            androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
             uiLocalNotificationDateInterpretation:
                 UILocalNotificationDateInterpretation.absoluteTime,
             matchDateTimeComponents: DateTimeComponents.dayOfWeekAndTime);
@@ -2143,6 +2146,7 @@ void main() {
               'payload': '',
               'timeZoneName': 'Australia/Sydney',
               'scheduledDateTime': convertDateToISO8601String(scheduledDate),
+              'scheduledDateTimeISO8601': scheduledDate.toIso8601String(),
               'matchDateTimeComponents':
                   DateTimeComponents.dayOfWeekAndTime.index,
               'platformSpecifics': <String, Object?>{
@@ -2382,7 +2386,7 @@ void main() {
               'payload': '',
               'platformSpecifics': null,
             },
-            'startType': AndroidServiceStartType.startSticky.value,
+            'startType': AndroidServiceStartType.startSticky.index,
             'foregroundServiceTypes': null
           }));
     });
@@ -2497,7 +2501,7 @@ void main() {
                   'audioAttributesUsage': 5,
                 },
               },
-              'startType': AndroidServiceStartType.startSticky.value,
+              'startType': AndroidServiceStartType.startSticky.index,
               'foregroundServiceTypes': null
             },
           ));

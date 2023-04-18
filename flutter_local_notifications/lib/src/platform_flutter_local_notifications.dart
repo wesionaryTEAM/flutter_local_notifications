@@ -84,16 +84,6 @@ class MethodChannelFlutterLocalNotificationsPlugin
         <PendingNotificationRequest>[];
   }
 
-  /// Returns the list of active notifications shown by the application that
-  /// haven't been dismissed/removed.
-  ///
-  /// The supported OS versions are
-  /// - Android: Android 6.0 or newer
-  /// - iOS: iOS 10.0 or newer
-  /// - macOS: macOS 10.14 or newer
-  ///
-  /// Throws a [PlatformException] with an `unsupported_os_version` error code
-  /// on older OS versions. On Linux it will throw an [UnimplementedError].
   @override
   Future<List<ActiveNotification>> getActiveNotifications() async {
     final List<Map<dynamic, dynamic>>? activeNotifications =
@@ -345,7 +335,7 @@ class AndroidFlutterLocalNotificationsPlugin
         'payload': payload ?? '',
         'platformSpecifics': notificationDetails?.toMap(),
       },
-      'startType': startType.value,
+      'startType': startType.index,
       'foregroundServiceTypes': foregroundServiceTypes
           ?.map((AndroidServiceForegroundType type) => type.value)
           .toList()
@@ -545,7 +535,7 @@ class AndroidFlutterLocalNotificationsPlugin
               description: a['description'],
               groupId: a['groupId'],
               showBadge: a['showBadge'],
-              importance: Importance(a['importance']),
+              importance: Importance.values[(a['importance'])],
               playSound: a['playSound'],
               sound: _getNotificationChannelSound(a),
               enableLights: a['enableLights'],
